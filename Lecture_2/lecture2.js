@@ -1,10 +1,18 @@
+
+//----------task_1
+
 function compare(param1, param2){
     return (param1>param2);
 }
 
+
+//----------task_2
+
 function showLine(inputText){
     return "Вы ввели "+inputText;
 }
+
+//----------task_3
 
 function typeTest(param){
     if (param===null) return "Null type";
@@ -12,9 +20,13 @@ function typeTest(param){
     return "Other type";
 }
 
+//----------task_4
+
 function addObjectParam(obj){
     obj.checked=true;
 }
+
+//----------task_5
 
 function numberNext(number_end){
     var number_start=0;
