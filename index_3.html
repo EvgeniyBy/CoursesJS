@@ -1,0 +1,112 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Text page</title>
+    <script type="text/javascript" src="/CoursesJS/Lecture_3/lecture3.js"></script>
+</head>
+
+<style>
+button{
+    outline: none;
+    background: rgb(0, 180, 81);
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid grey;    
+    height: 40px;
+    width: 200px;
+    transition: 0.5s
+}
+button:hover{
+    background: rgb(255, 255, 255);
+    border-color: rgb(0, 180, 81);
+    color: grey;
+    transition: 0.5s
+}
+button:active{
+    background: rgb(240, 240, 240);
+    border: 2px solid rgb(0, 180, 81);
+    transition: 0.5s
+}
+</style>
+
+<body style="text-align:center">
+    <h1 style="font-style: italic">Lesson 3</h1>
+    <button onclick="begin()">Start</button>
+</body>
+
+    <script type="text/javascript" >
+/*        window.onload = function() {
+            alert( 'Откройте консоль' );
+        };*/
+        function begin() {    
+            var test;
+            console.log(_.getAutor());
+            console.log('"'+test +'"' + " undefined " + _.undefinedCheck(test));
+            test=null;
+            console.log('"'+test +'"' + " undefined " + _.undefinedCheck(test));
+            test=null;
+            console.log('"'+test +'"' + " null " + _.nullCheck(test));
+            console.log('"'+test +'"' + " NaN " + _.nanCheck(test));
+            test='sdf'/2;
+            console.log('"'+test +'"' + " null " + _.nullCheck(test));
+            console.log('"'+test +'"' + " NaN " + _.nanCheck(test));
+            test=5+6;
+            console.log('"'+test +'"' + " NaN " + _.nanCheck(test));
+            var start=1;
+            var end=2;
+            console.log('"'+start +'" ' +'"'+end +'"' + " random " + _.randomInt(start,end));
+            start=-100;
+            end=100;
+            console.log('"'+start +'" ' +'"'+end +'"' + " random " + _.randomInt(start,end));
+
+            /* object */
+
+            var user = {
+                name: "Сын",
+                surname: "Отца",
+                age: 5,
+                sex: null,
+                parent:{
+                        mom:{
+                            name: "Мама",
+                            surname: "Js",
+                            age:38,
+                            sex:null
+                            },
+                        dad:{
+                            name: "Папа",
+                            surname: "Js",
+                            age:41,
+                            sex:null
+                            }
+                        },                
+            };
+
+            console.log("user : ");
+            console.log(user);
+
+            console.log("-------------copy object-----------------");
+            
+            var copyUser=_.copyObj(user);
+            
+            console.log("copy user : ");
+            console.log(copyUser);
+
+            console.log("-------------map object-----------------");
+
+            var mapUser=_.mapObj(user, function(item){return item +" new";});
+            
+            console.log("map user : ");
+            console.log(mapUser);
+
+            console.log("-------------delete property-----------------");
+
+            var deleteUser=_.deletePropertyOdj(user, function(item){return _.nanCheck(item);});
+
+            console.log("delete user : ");
+            console.log(deleteUser);                    
+        }
+    </script>
+</html>
