@@ -1,0 +1,205 @@
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <script type="text/javascript" src="/CoursesJS/Lecture_4/lecture4.js"></script>
+</head>
+
+<style>
+button{
+    outline: none;
+    background: rgb(0, 180, 81);
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid grey;    
+    height: 40px;
+    width: 200px;
+    transition: 0.5s
+}
+button:hover{
+    background: rgb(255, 255, 255);
+    border-color: rgb(0, 180, 81);
+    color: grey;
+    transition: 0.5s
+}
+button:active{
+    background: rgb(240, 240, 240);
+    border: 2px solid rgb(0, 180, 81);
+    transition: 0.5s
+}
+
+.calculator{
+    display: inline-block;
+    border: 1px solid rgb(168, 168, 168);
+    padding: 10px;
+    width: 350px;
+    margin: 10px;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+}
+
+.calculator .display{
+    border: 1px solid rgb(131, 131, 131);
+    height: 40px;
+    padding: 10px;
+    font-size: 40px;
+    line-height: 1;
+    color: rgb(54, 54, 54);
+    margin-bottom: 10px;
+    text-align: right;
+    overflow: hidden;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+}
+
+.calculator .panel-button{
+    border: 1px solid rgb(168, 168, 168);    
+    width: 100%;
+    display: inline-block;
+}
+
+.calculator .panel-button .button{    
+    display: inline-block;
+    width: 25%;
+    margin: 5px 0;
+    float: left;
+}
+
+.calculator .panel-button .button span{
+    border: 1px solid rgb(116, 116, 116);
+    border-radius: 3%;
+    color: black;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 5px;
+    display: block;
+    cursor:pointer;
+    background: #f2f6f8; /* Old browsers */
+    background: -moz-linear-gradient(top, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f2f6f8 0%,#d8e1e7 50%,#b5c6d0 51%,#e0eff9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=0 ); /* IE6-9 */
+    transition: 0.5s;
+}
+
+
+.calculator .panel-button .button.operation span{
+    background: #ebe9f9; /* Old browsers */
+    background: -moz-linear-gradient(top, #ebe9f9 0%, #d8d0ef 50%, #cec7ec 51%, #c1bfea 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ebe9f9 0%,#d8d0ef 50%,#cec7ec 51%,#c1bfea 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ebe9f9 0%,#d8d0ef 50%,#cec7ec 51%,#c1bfea 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebe9f9', endColorstr='#c1bfea',GradientType=0 ); /* IE6-9 */
+    }
+
+.calculator .panel-button .button span:hover{
+    background: #b5c6d0;
+    transition: 0.5s;
+}
+
+.calculator .panel-button .button span:active{
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    transition: 0.1s;
+}
+
+.log{
+    display: inline-block;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgb(168, 168, 168);
+    margin: 10px;
+    padding: 10px;
+}
+
+.clear{
+    display: block;
+    height: 0;
+    width: 100%;
+}
+</style>
+
+<body style="text-align:center">
+    <h1 style="font-style: italic">Калькулятор</h1>
+    <div class="container">
+    <div class="calculator">
+        <div class="display"></div>
+        <div class="panel-button">
+            <div class="button number" value="(">
+                <span>(</span>
+            </div>
+            <div class="button number" value=")">
+                <span>)</span>
+            </div>
+            <div class="button number" value="d">
+                <span>&lt;&minus;</span>
+            </div>
+            <div class="button operation" value="c">
+                <span>C</span>
+            </div>
+            <div class="button number" value="1">
+                <span>1</span>
+            </div>
+            <div class="button number" value="2">
+                <span>2</span>
+            </div>
+            <div class="button number" value="3">
+                <span>3</span>
+            </div>
+            <div class="button operation" value="+">
+                <span>+</span>
+            </div>
+            <div class="button number" value="4">
+                <span>4</span>
+            </div>
+            <div class="button number" value="5">
+                    <span>5</span>
+                </div>
+            <div class="button number" value="6">
+                <span>6</span>
+            </div>
+            <div class="button operation" value="-">
+                <span>-</span>
+            </div>
+            <div class="button number" value="7">
+                <span>7</span>
+            </div>
+            <div class="button number" value="8">
+                <span>8</span>
+            </div>
+            <div class="button number" value="9">
+                <span>9</span>
+            </div> 
+            <div class="button operation" value="*">
+                <span>*</span>
+            </div>           
+            <div class="button number" value=".">
+                <span>.</span>
+            </div>
+            <div class="button number" value="0">
+                <span>0</span>
+            </div>
+            <div class="button operation" value="=">
+                <span>=</span>
+            </div>
+            <div class="button operation" value="/">
+                <span>/</span>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="log"></div>
+    </div>
+</body>
+    <script type="text/javascript" >
+    
+    </script>
+</html>
