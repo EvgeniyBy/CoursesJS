@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Лекция 5</title>
+</head>
+
+<body style="text-align:center">
+    <h1 style="font-style: italic">Лекция 5</h1>    
+
+    <script type="text/javascript" src="/CoursesJS/Lecture_5/lecture5.js"></script>
+    <script type="text/javascript" >   
+
+        function log() {
+            console.log(arguments);
+        }
+        
+        var debounced = modul.debounce(log, 500);  //тест  debounce
+        debounced('1');
+        debounced('2', 45, '20.11.2018');
+        setTimeout(debounced, 1000, "3");
+        setTimeout(function(){    
+            debounced('4');
+            debounced('5');
+            debounced('6');       
+        }, 2000); 
+
+        function testPromise(param){
+            console.log(param);
+            return param;
+        }
+
+        var promiseSetTimeout=modul.setTimeoutPromise(4000);          // тест promise setTimeout  
+        promiseSetTimeout
+        .then(testPromise)
+        .then(function(timer){
+            timer+=1000;
+            console.log("Изменили результат предыдущего промиса");
+            return timer;            
+            })
+        .then(timer=>modul.setTimeoutPromise(timer)) 
+        .then(testPromise)
+        .catch(error => {
+                    alert(error);
+                  });
+
+
+        function headerStyle(){
+            document.querySelector('body').innerHTML=arguments[0];
+        }
+
+        var request = modul.ajax('GET', 'header.html', 3000);       //тест promise XMLhttpRequest
+        request
+        .then(headerStyle,testPromise)
+        .then(function () { return modul.ajax('GET', 'header-none.html', 3000)})
+        .then(headerStyle, testPromise)
+        .catch(error => {
+                    alert(error);
+                  });;
+
+        modul.urlsPromise(["first","next"])
+        .then(function(){
+            console.log(arguments[0].join("-"));
+        });
+
+    </script>
+</body>
+</html>

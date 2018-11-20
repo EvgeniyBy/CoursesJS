@@ -5,7 +5,7 @@ var _=(function(value) {
 
             nullCheck:function(value){ return value===null},            //проверка на null
 
-            nanCheck:function(value){ return isNaN(value)},             //проверка на NaN 
+            nanCheck:function(value){ return Number.isNaN(value)},             //проверка на NaN 
 
             randomInt:function(start, end){                             //случайное число в диапазоне [start, end]
                 var distance=end+1-start;

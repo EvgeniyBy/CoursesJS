@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Лекция 6</title>
+</head>
+
+<body style="text-align:center">
+    <h1 style="font-style: italic">Лекция 6</h1>    
+
+    <script type="text/javascript" src="class/employee.js"></script>
+    <script type="text/javascript" src="class/project.js"></script>
+    <script type="text/javascript" src="class/developer.js"></script>
+    <script type="text/javascript" src="class/manager.js"></script>    
+    <script type="text/javascript" src="class/company.js"></script>
+    <script type="text/javascript">
+        var company = new Company("my", 56000);
+        company.addProject("tes4t", 100, 4000,3);
+        company.addProject("test", 100, 40,2);
+        company.addProject("test2", 100, 400,4);
+        company.addManager("vasu", "pa", 1.4, 40);
+        company.addManager("pety", "klupa", 1.1, 40);
+        company.addDev("asd", "qwe", 12, 'middle');
+        company.addDev("1asd", "qwe", 12);
+        company.addDev("2asd", "qwe", 12);
+        company.addDev("3asd", "qwe", 12);
+        company.addDev("4asd", "qwe", 12);
+        company.addDev("5asd", "qwe", 12);
+        company.addDev("6asd", "qwe", 12);
+        company.addDev("7asd", "qwe", 12);
+        company.addManagerProject();
+        company.addManagerDevs();
+        setInterval(function(){
+            company.bussinesProces();},1000);
+</script>
+</body>
+</html>
