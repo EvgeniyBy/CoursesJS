@@ -31,12 +31,19 @@ Managers.prototype.addDevs = function(devs){
     });
 }
 
+Managers.prototype.DelDevs = function(){
+    this.dev.forEach(devItem => {
+        devItem.status=false;        
+    });
+    this.dev=[];    
+}
+
 Managers.prototype.getStringCode = function(){
     var resultLines=0;
     var many=0;
     for (var dev=0; dev<this.dev.length; dev++){
         resultLines=this.dev[dev].getStringCodeDev()+resultLines;
-        many+=this.dev[dev].getSalary();
+        many=Number(this.dev[dev].getSalary())+Number(many);
     }
     resultLines*=this.experience;
     return {Lines: resultLines, Many: many};
