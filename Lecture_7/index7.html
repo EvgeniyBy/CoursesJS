@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Лекция 7</title>
+    <link rel="stylesheet"  href="css/style.css"> 
+</head>
+
+<body style="text-align:center">
+    <h1 style="font-style: italic"><button class="start">Start</button><br>
+        <button class="stop">Stop</button></h1>    
+    <div class="setting">
+        <div class="contora">
+                <h6 style="font-style: italic">Компания</h6>
+                <input type="text" placeholder="Название компании" class="name">
+                <input type="text" placeholder="Введите бюджет" class="babki">
+                <button class="set">Применить</button>
+        </div>
+        <div class="manager">
+             <h6 style="font-style: italic">Менеджер</h6>
+            <input type="text" placeholder="имя" class="fname">
+            <input type="text" placeholder="фамилия" class="lname">
+            <input type="text" placeholder="з/п" class="many">
+            <input type="text" placeholder="опыт" class="experience">            
+            <button class="add">Добавить</button>
+        </div>
+
+        <div class="developer">
+            <h6 style="font-style: italic">Разработчик</h6>
+            <input type="text" placeholder="имя" class="fname">
+            <input type="text" placeholder="фамилия" class="lname">
+            <input type="text" placeholder="з/п" class="many">
+            <select class="level">
+                <option selected value="junior">junior</option>
+                <option value="middle">middle</option>
+                <option value="senior">senior</option>
+            </select>          
+            <button class="add">Добавить</button>
+        </div>
+
+        <div class="project">
+            <h6 style="font-style: italic">Проект</h6>
+            <input type="text" placeholder="Название" class="name">
+            <input type="text" placeholder="Стоимость" class="cost">
+            <input type="text" placeholder="Количество строк" class="stringCode">
+            <input type="text" placeholder="Максимальное число разрабов" class="maxDev">      
+            <button class="add">Добавить</button>
+        </div>
+    </div>
+    
+    <div class="progress">
+            <h6 style="font-style: italic">Игра</h6>
+            <div class="company"><span class="name"></span><br>
+            <span class="babki"></span></div>
+
+            <div class="manager">
+                <h6 style="font-style: italic">Менеджер</h6>
+                <select class="list">
+                </select>
+                <button class="del">Delete</button>                
+            </div>
+            <div class="developer">
+                    <h6 style="font-style: italic">Разработчик</h6>
+                    <select class="list">    
+                    </select>
+                    <button class="del">Delete</button>
+                    <button class="up">Next level</button>
+            </div>
+            <div class="project">
+                <div class="item proj_">
+                    <div class="param">
+                        <span>Название </span><span class="title"></span>
+                        <br>
+                        <span>Бюджет </span><span class="babki"></span>
+                        <br>
+                        <span>Цель </span><span class="strcode"></span>
+                    </div>
+                    <div class="process">
+                        <span>Выполненно </span><span class="work"></span>
+                        <br>
+                        <span>Потрачено </span><span class="babki"></span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <textarea class="textout">
+
+                </textarea>
+            </div>
+            
+    </div>
+    
+
+
+    <script type="text/javascript" src="class/employee.js"></script>
+    <script type="text/javascript" src="class/project.js"></script>
+    <script type="text/javascript" src="class/developer.js"></script>
+    <script type="text/javascript" src="class/manager.js"></script>    
+    <script type="text/javascript" src="class/company.js"></script>
+    <script type="text/javascript" src="dom/dom.js"></script>
+
+    <script type="text/javascript">
+
+
+
+        
+</script>
+</body>
+</html>
