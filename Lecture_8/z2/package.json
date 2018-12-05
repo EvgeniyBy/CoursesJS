@@ -1,0 +1,11 @@
+{
+  "name": "zadacha_2",
+  "version": "1.0.0",
+  "description": "Game server",
+  "main": "index.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "author": "Borzov Evgeniy",
+  "license": "ISC"
+}

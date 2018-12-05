@@ -1,0 +1,11 @@
+{
+  "name": "zadach_1",
+  "version": "1.0.0",
+  "description": "Input text console write to file",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Borzov Evgeniy",
+  "license": "ISC"
+}
